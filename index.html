@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Olá mundo by janesmacedo</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Olá mundo</h1>
+        <h2>Aprendendo a criar com GitHub</h2>
+        <a href="https://github.com/janesmacedo/Ol-Mundo" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>`<img src="https://rafaelstz.files.wordpress.com/2014/03/cover.jpg?w=500" alt="Teste">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;</p>
+
+<p>namespace MenuTransparencia
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var menus = Banco.ListarTodos();</p>
+
+<pre><code>        MostraMenu(menus.OrderBy(x =&gt; x.Titulo));
+    }
+
+    public static void MostraMenu(IEnumerable&lt;MenuTransparencia&gt; menus, int nivel = 0)
+    {
+        foreach (var menu in menus)
+        {
+            var tabs = new String('\t', nivel);
+
+            Console.WriteLine("{0} {1}", tabs, menu.Titulo);
+
+            if (menu.MenusTransparencia.Any())
+            {
+                nivel++;
+                MostraMenu(menu.MenusTransparencia, nivel);
+                nivel--;
+            }
+
+        }
+    }
+}
+
+
+public class Banco
+{
+    public static IEnumerable&lt;MenuTransparencia&gt; ListarTodos()
+    {
+        return new List&lt;MenuTransparencia&gt;()
+                   {
+                       new MenuTransparencia()
+                           {
+                               Titulo = "Menu Nivel 1",
+                               Link = "~/Nivel_1",
+                               MenusTransparencia = new List&lt;MenuTransparencia&gt;()
+                                                        {
+                                                            new MenuTransparencia()
+                                                                {
+                                                                    Titulo = "Menu Nivel2",
+                                                                    Link = "~/Nivel_2",
+                                                                    MenusTransparencia = new List&lt;MenuTransparencia&gt;()
+                                                                                                {
+                                                                                                    new MenuTransparencia()
+                                                                                                        {
+                                                                                                            Titulo = "Menu Nivel3",
+                                                                                                            Link = "~/Nivel_3"
+                                                                                                        },
+                                                                                                    new MenuTransparencia()
+                                                                                                        {
+                                                                                                            Titulo = "Menu Nivel3",
+                                                                                                            Link = "~/Nivel_3"
+                                                                                                        }
+                                                                                                }
+                                                                },
+                                                            new MenuTransparencia()
+                                                                {
+                                                                    Titulo = "Menu Nivel2",
+                                                                    Link = "~/Nivel_2"
+                                                                }
+                                                        }
+                           },
+                           new MenuTransparencia()
+                           {
+                               Titulo = "Menu Nivel1",
+                               Link = "~/Nivel_1",
+                               MenusTransparencia = new List&lt;MenuTransparencia&gt;()
+                                                        {
+                                                            new MenuTransparencia()
+                                                                {
+                                                                    Titulo = "Menu Nivel2",
+                                                                    Link = "~/Nivel_2"
+                                                                },
+                                                            new MenuTransparencia()
+                                                                {
+                                                                    Titulo = "Menu Nivel2",
+                                                                    Link = "~/Nivel_2"
+                                                                }
+                                                        }
+                           },
+                           new MenuTransparencia()
+                           {
+                               Titulo = "Menu Nivel1",
+                               Link = "~/Nivel_1"
+                           },
+                           new MenuTransparencia()
+                           {
+                               Titulo = "Menu Nivel1",
+                               Link = "~/Nivel_1"
+                           },
+
+                   };
+    }
+}
+
+public class MenuTransparencia
+{
+    public MenuTransparencia()
+    {
+        MenusTransparencia = new List&lt;MenuTransparencia&gt;();
+    }
+    public string Titulo { get; set; }
+    public string Link { get; set; }
+    public IEnumerable&lt;MenuTransparencia&gt; MenusTransparencia { get; set; }
+}
+</code></pre>
+
+<p>}`</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/janesmacedo/Ol-Mundo/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/janesmacedo/Ol-Mundo/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/janesmacedo/Ol-Mundo"></a> is maintained by <a href="https://github.com/janesmacedo">janesmacedo</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
